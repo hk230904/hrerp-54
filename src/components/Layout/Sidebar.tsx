@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { cn } from '@/lib/utils';
@@ -10,7 +11,7 @@ import {
 } from 'lucide-react';
 
 interface SidebarProps {
-  userRole: 'admin' | 'manager' | 'employee';
+  userRole: 'admin' | 'manager' | 'employee' | 'hr';
 }
 
 const Sidebar = ({ userRole }: SidebarProps) => {
@@ -44,13 +45,13 @@ const Sidebar = ({ userRole }: SidebarProps) => {
       title: 'Dashboard',
       icon: BarChart3,
       path: '/',
-      roles: ['admin', 'manager', 'employee']
+      roles: ['admin', 'manager', 'employee', 'hr']
     },
     {
       id: 'employees',
       title: 'Employee Management',
       icon: Users,
-      roles: ['admin', 'manager'],
+      roles: ['admin', 'manager', 'hr'],
       children: [
         { title: 'Employee Directory', path: '/employees' },
         { title: 'Add Employee', path: '/employees/add' },
@@ -61,7 +62,7 @@ const Sidebar = ({ userRole }: SidebarProps) => {
       id: 'recruitment',
       title: 'Recruitment & Talent',
       icon: UserPlus,
-      roles: ['admin', 'manager'],
+      roles: ['admin', 'manager', 'hr'],
       children: [
         { title: 'Job Postings', path: '/recruitment' },
         { title: 'Candidate Pipeline', path: '/recruitment/candidates' },
@@ -72,7 +73,7 @@ const Sidebar = ({ userRole }: SidebarProps) => {
       id: 'time',
       title: 'Time Management',
       icon: Clock,
-      roles: ['admin', 'manager', 'employee'],
+      roles: ['admin', 'manager', 'employee', 'hr'],
       children: [
         { title: 'Time Tracking', path: '/time/tracking' },
         { title: 'Attendance', path: '/time/attendance' },
@@ -83,7 +84,7 @@ const Sidebar = ({ userRole }: SidebarProps) => {
       id: 'leave',
       title: 'Leave Management',
       icon: Calendar,
-      roles: ['admin', 'manager', 'employee'],
+      roles: ['admin', 'manager', 'employee', 'hr'],
       children: [
         { title: 'My Leaves', path: '/leave/my-leaves' },
         { title: 'Leave & Attendance', path: '/leave/attendance' },
@@ -95,7 +96,7 @@ const Sidebar = ({ userRole }: SidebarProps) => {
       id: 'performance',
       title: 'Performance Management',
       icon: Award,
-      roles: ['admin', 'manager', 'employee'],
+      roles: ['admin', 'manager', 'employee', 'hr'],
       children: [
         { title: 'Goal Management', path: '/performance' },
         { title: 'Performance Reviews', path: '/performance/reviews' },
@@ -106,7 +107,7 @@ const Sidebar = ({ userRole }: SidebarProps) => {
       id: 'learning',
       title: 'Learning & Development',
       icon: BookOpen,
-      roles: ['admin', 'manager', 'employee'],
+      roles: ['admin', 'manager', 'employee', 'hr'],
       children: [
         { title: 'Course Catalog', path: '/learning' },
         { title: 'My Learning', path: '/learning/my-learning' },
@@ -117,7 +118,7 @@ const Sidebar = ({ userRole }: SidebarProps) => {
       id: 'payroll',
       title: 'Payroll & Compensation',
       icon: CreditCard,
-      roles: ['admin', 'manager'],
+      roles: ['admin', 'manager', 'hr'],
       children: [
         { title: 'Payroll Processing', path: '/payroll' },
         { title: 'Compensation Plans', path: '/payroll/compensation' },
@@ -128,7 +129,7 @@ const Sidebar = ({ userRole }: SidebarProps) => {
       id: 'analytics',
       title: 'Analytics & Insights',
       icon: TrendingUp,
-      roles: ['admin', 'manager'],
+      roles: ['admin', 'manager', 'hr'],
       children: [
         { title: 'Workforce Analytics', path: '/analytics/workforce' },
         { title: 'Performance Analytics', path: '/analytics/performance' },
@@ -139,7 +140,7 @@ const Sidebar = ({ userRole }: SidebarProps) => {
       id: 'planning',
       title: 'Workforce Planning',
       icon: Target,
-      roles: ['admin', 'manager'],
+      roles: ['admin', 'manager', 'hr'],
       children: [
         { title: 'Capacity Planning', path: '/planning/workforce' },
         { title: 'Skill Management', path: '/planning/skills' },
@@ -151,13 +152,13 @@ const Sidebar = ({ userRole }: SidebarProps) => {
       title: 'Compliance',
       icon: Shield,
       path: '/compliance',
-      roles: ['admin', 'manager']
+      roles: ['admin', 'manager', 'hr']
     },
     {
       id: 'reports',
       title: 'Reports',
       icon: FileText,
-      roles: ['admin', 'manager'],
+      roles: ['admin', 'manager', 'hr'],
       children: [
         { title: 'HR Analytics', path: '/reports/analytics' },
         { title: 'Custom Reports', path: '/reports/custom' },
